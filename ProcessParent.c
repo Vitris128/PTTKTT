@@ -5,7 +5,7 @@
 
 int main(void) {
     pid_t pid;
-    int n;
+    int n, stat;
     printf("n = ");
     scanf("%d", &n);
     pid = vfork();
@@ -25,7 +25,8 @@ int main(void) {
         exit(EXIT_SUCCESS);
     }
     else {
-        printf("PID's P2 - Child of P1: %d\n",childrenPID);
+        printf("PID's P2 - Child of P1: %d\n", pid);
+        printf("Exit status: %d\n", WEXITSTATUS(waitpid(pid, &stat, 0)));
     }
     return EXIT_SUCCESS;
 
