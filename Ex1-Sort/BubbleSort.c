@@ -20,6 +20,12 @@ void bubbleSort(recordType record[], int n) {
         if(record[j].key < record[j-1].key)
             swapPosition(&record[j], &record[j-1]);                                                                                                                                                                                                                                                                                      
 }
+void printData(recordType record[], int n) {
+    int i;
+    for(i=0;i<n;i++) {
+        printf("%3d %5d %8.2f\n",i, record[i].key, record[i].otherFields);
+    }
+}
 
 int main() {
     printf("--- Selection Sort ---\n");
@@ -31,16 +37,12 @@ int main() {
         n++;
     }
     printf("\n---Before sorting---\n");
-    for(i=0;i<n;i++) {
-        printf("%4d %.2f\n", record[i].key, record[i].otherFields);
-    }
+    printData(record,n);
 
     bubbleSort(record, n);
 
     printf("\n---After sorting---\n");
-    for(i=0;i<n;i++) {
-        printf("%4d %.2f\n", record[i].key, record[i].otherFields);
-    }
+    printData(record,n);
 
 
     fclose(fptr);
