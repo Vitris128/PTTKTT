@@ -8,7 +8,7 @@ int main(void) {
     int n, stat;
     printf("n = ");
     scanf("%d", &n); // biến n để in ra bảng cửu chương n
-    pid = vfork(); // tạo tiến trình con
+    pid = vfork(); // tạo tiến trình con, hàm vfork sẽ đợi tiến trình con kết thúc thì tiến trình cha mới tiếp tục
     int childrenPID=0; // biến lưu PID của tiến trình con 
     if(pid<0) {  //pid <0 thì không thể tạo tiến trình con
         printf("\n Unable to create child process!\n");
