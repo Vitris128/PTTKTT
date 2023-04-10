@@ -15,15 +15,15 @@ void swapPosition(recordType* a, recordType* b) {
 
 void pushDown(recordType record[], int first, int last) {
     int r = first;
-    while(r<= (last-1)/2)
+    while(r <= (last-1)/2)
         if(last==2*r+1) {
-            if(record[r].key < record[last].key)
+            if(record[r].key > record[last].key)
                 swapPosition(&record[r], &record[last]);
                 r = last;
-        } else if(record[r].key < record[2*r+1].key && record[2*r+1].key >= record[2*r+2].key) {
+        } else if(record[r].key > record[2*r+1].key && record[2*r+1].key <= record[2*r+2].key) {
                     swapPosition(&record[r], &record[2*r+1]);
                     r = 2*r+1;
-                } else if(record[r].key < record[2*r+2].key) {
+                } else if(record[r].key > record[2*r+2].key) {
                     swapPosition(&record[r], &record[2*r+2]);
                     r =2*r+2;
                     } else
