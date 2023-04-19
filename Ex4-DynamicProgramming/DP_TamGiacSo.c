@@ -36,11 +36,11 @@ int CS_max(int F[][size], int i, int j){
 	if (j==i-1)
 		return (F[i-1][i-2]>F[i-1][i-1])? i-2:i-1;
 	
-	if (F[i-1][j-1]>F[i-1][j]&&F[i-1][j-1]>F[i-1][j+1])
+	if (F[i-1][j-1]>F[i-1][j]&& F[i-1][j-1]>F[i-1][j+1])
 		return j-1;
-	if (F[i-1][j]>F[i-1][j-1]&&F[i-1][j]>F[i-1][j+1])
+	if (F[i-1][j]>F[i-1][j-1]&& F[i-1][j]>F[i-1][j+1])
 		return j;
-	if (F[i-1][j+1]>F[i-1][j]&&F[i-1][j+1]>F[i-1][j-1])
+	if (F[i-1][j+1]>F[i-1][j]&& F[i-1][j+1]>F[i-1][j-1])
 		return j+1;
 }
 
